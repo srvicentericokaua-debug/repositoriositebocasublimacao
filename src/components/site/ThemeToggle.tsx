@@ -6,6 +6,9 @@ export function ThemeToggle({ className }: { className?: string }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
+    // Syncs from the blocking theme-init script in <head>, which runs before hydration
+    // and can differ from the server-rendered "light" default — a one-time external sync.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsDark(document.documentElement.getAttribute("data-theme") === "dark");
   }, []);
 

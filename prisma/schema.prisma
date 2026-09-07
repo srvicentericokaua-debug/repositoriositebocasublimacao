@@ -64,6 +64,16 @@ model PortfolioItem {
   createdAt    DateTime @default(now())
 }
 
+model Testimonial {
+  id         String   @id @default(cuid())
+  authorName String
+  rating     Int      @default(5)
+  text       String
+  order      Int      @default(0)
+  active     Boolean  @default(true)
+  createdAt  DateTime @default(now())
+}
+
 model SiteSettings {
   id               Int    @id @default(1)
   companyName      String

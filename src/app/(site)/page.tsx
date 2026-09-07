@@ -10,11 +10,12 @@ import { ProductCard } from "@/components/site/ProductCard";
 import { destaqueIcons } from "@/components/site/icons";
 import { AmbientVideo } from "@/components/site/AmbientVideo";
 import { MarqueeRow } from "@/components/site/MarqueeRow";
+import { GoogleReviewsSection } from "@/components/site/GoogleReviewsSection";
 
 export const revalidate = 0;
 
 export default async function HomePage() {
-  const [featuredProducts, categories, portfolioPreview, settings] = await Promise.all([
+  const [featuredProducts, categories, portfolioPreview, settings, testimonials] = await Promise.all([
     prisma.product.findMany({
       where: { active: true, featured: true },
       include: { category: true, images: { orderBy: { order: "asc" }, take: 1 } },
@@ -24,6 +25,7 @@ export default async function HomePage() {
     prisma.category.findMany({ where: { active: true }, orderBy: { order: "asc" } }),
     prisma.portfolioItem.findMany({ where: { active: true }, orderBy: { order: "asc" }, take: 6 }),
     getSiteSettings(),
+    prisma.testimonial.findMany({ where: { active: true }, orderBy: { order: "asc" } }),
   ]);
 
   const jsonLd = {
@@ -293,6 +295,8 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      <GoogleReviewsSection reviews={testimonials} />
 
       {/* CTA FINAL */}
       <section className="bg-[var(--color-coral)] py-16 md:py-20">

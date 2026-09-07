@@ -10,6 +10,7 @@ export const companyInfo = {
   instagram: "@bocasublimacao",
   instagramUrl: "https://instagram.com/bocasublimacao",
   whatsappCatalogUrl: "https://wa.me/c/5511962071750",
+  googleReviewsUrl: "https://maps.app.goo.gl/zsXMgFB7XBcqTEz68",
 };
 
 export const quemSomosText = `A Boca Sublimação nasceu em março de 2025, em Sorocaba/SP, a partir de um sonho que começou a tomar forma durante uma visita à FuturePrint, em São Paulo.
