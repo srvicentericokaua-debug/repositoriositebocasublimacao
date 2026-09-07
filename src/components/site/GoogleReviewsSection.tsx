@@ -1,12 +1,5 @@
-import { companyInfo } from "@/lib/content";
+import { companyInfo, googleReviews, type GoogleReview } from "@/lib/content";
 import { Reveal } from "./Reveal";
-
-type TestimonialData = {
-  id: string;
-  authorName: string;
-  rating: number;
-  text: string;
-};
 
 function GoogleG({ className }: { className?: string }) {
   return (
@@ -19,11 +12,11 @@ function GoogleG({ className }: { className?: string }) {
   );
 }
 
-function Stars({ rating }: { rating: number }) {
+function Stars({ rating, size = 14 }: { rating: number; size?: number }) {
   return (
     <div className="flex gap-0.5 text-[var(--color-coral)]" aria-label={`${rating} de 5 estrelas`}>
       {Array.from({ length: 5 }, (_, i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 20 20" fill={i < rating ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1">
+        <svg key={i} width={size} height={size} viewBox="0 0 20 20" fill={i < rating ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1">
           <path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.2 5.9-.8L10 1.5Z" strokeLinejoin="round" />
         </svg>
       ))}
@@ -31,20 +24,20 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
-function ReviewCard({ review }: { review: TestimonialData }) {
-  const initial = review.authorName.trim().charAt(0).toUpperCase() || "?";
+function ReviewCard({ review }: { review: GoogleReview }) {
+  const initial = review.name.trim().charAt(0).toUpperCase() || "?";
   return (
     <a
       href={companyInfo.googleReviewsUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex w-72 shrink-0 flex-col gap-3 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-5 shadow-[0_10px_30px_-22px_rgba(36,26,23,0.35)] transition-shadow hover:shadow-[0_14px_34px_-18px_rgba(36,26,23,0.4)] sm:w-80"
+      className="flex w-[78vw] shrink-0 flex-col gap-3 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-5 shadow-[0_10px_30px_-22px_rgba(36,26,23,0.35)] transition-shadow hover:shadow-[0_14px_34px_-18px_rgba(36,26,23,0.4)] sm:w-72 md:w-80"
     >
       <div className="flex items-center justify-between">
         <Stars rating={review.rating} />
         <GoogleG className="h-4 w-4 shrink-0" />
       </div>
-      <p className="line-clamp-4 text-sm leading-relaxed text-[var(--color-ink-soft)]">
+      <p className="text-sm leading-relaxed text-[var(--color-ink-soft)]">
         &ldquo;{review.text}&rdquo;
       </p>
       <div className="mt-auto flex items-center gap-3 pt-1">
@@ -52,8 +45,8 @@ function ReviewCard({ review }: { review: TestimonialData }) {
           {initial}
         </span>
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-[var(--color-ink)]">{review.authorName}</p>
-          <p className="text-xs text-[var(--color-ink-soft)]">Avaliação verificada · Google</p>
+          <p className="truncate text-sm font-semibold text-[var(--color-ink)]">{review.name}</p>
+          <p className="text-xs text-[var(--color-ink-soft)]">{review.date} · Google</p>
         </div>
       </div>
     </a>
@@ -63,64 +56,61 @@ function ReviewCard({ review }: { review: TestimonialData }) {
 function MarqueeReviewRow({
   reviews,
   direction,
+  duration,
 }: {
-  reviews: TestimonialData[];
+  reviews: GoogleReview[];
   direction: "left" | "right";
+  duration: number;
 }) {
   const track = [...reviews, ...reviews];
   return (
     <div className="reviews-row overflow-hidden">
       <div
         className="reviews-track flex w-max gap-4"
-        style={{ animation: `marquee-${direction} 46s linear infinite` }}
+        style={{ animation: `marquee-${direction} ${duration}s linear infinite` }}
       >
         {track.map((review, i) => (
-          <ReviewCard key={`${review.id}-${i}`} review={review} />
+          <ReviewCard key={`${review.name}-${i}`} review={review} />
         ))}
       </div>
     </div>
   );
 }
 
-export function GoogleReviewsSection({ reviews }: { reviews: TestimonialData[] }) {
-  if (reviews.length === 0) return null;
-
+export function GoogleReviewsSection() {
   return (
     <section className="border-t border-[var(--color-line)] bg-[var(--color-paper)] py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-5 text-center md:px-8">
         <Reveal>
-          <span className="mb-3 inline-block text-xs font-semibold tracking-[0.2em] text-[var(--color-coral-dark)] uppercase">
-            Avaliações
-          </span>
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-2">
+            <Stars rating={5} size={13} />
+            <span className="text-sm font-semibold text-[var(--color-ink)]">5,0 no Google</span>
+          </div>
           <h2 className="font-[var(--font-display)] text-3xl leading-tight font-semibold text-[var(--color-ink)] md:text-4xl">
-            Quem conhece, recomenda.
+            Quem compra, recomenda.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[var(--color-ink-soft)]">
-            A opinião de nossos clientes é o que nos motiva a continuar oferecendo um atendimento
-            de excelência.
+            Veja o que nossos clientes estão falando sobre a Boca Sublimação.
           </p>
+          <p className="mt-1 text-xs text-[var(--color-ink-soft)]">Baseado em avaliações de clientes</p>
         </Reveal>
       </div>
 
       <Reveal variant="fade-up">
         <div className="reviews-fade-mask relative mt-10 flex flex-col gap-4">
-          <MarqueeReviewRow reviews={reviews} direction="right" />
-          <MarqueeReviewRow reviews={reviews} direction="left" />
+          <MarqueeReviewRow reviews={googleReviews} direction="right" duration={42} />
+          <MarqueeReviewRow reviews={googleReviews} direction="left" duration={48} />
         </div>
       </Reveal>
 
-      <div className="mx-auto mt-10 flex max-w-6xl flex-col items-center gap-4 px-5 text-center md:px-8">
-        <div className="flex items-center gap-2 text-sm font-medium text-[var(--color-ink)]">
-          <GoogleG className="h-5 w-5" />
-          <Stars rating={5} />
-          <span>Confira o que nossos clientes estão dizendo.</span>
-        </div>
+      <div className="mx-auto mt-10 flex max-w-6xl flex-col items-center px-5 text-center md:px-8">
         <a
           href={companyInfo.googleReviewsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-full border border-[var(--color-ink)]/15 px-6 py-3 text-sm font-semibold text-[var(--color-ink)] transition-colors hover:border-[var(--color-coral)] hover:text-[var(--color-coral-dark)]"
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--color-ink)]/15 px-6 py-3 text-sm font-semibold text-[var(--color-ink)] transition-colors hover:border-[var(--color-coral)] hover:text-[var(--color-coral-dark)]"
         >
+          <GoogleG className="h-4 w-4" />
           Ver todas as avaliações no Google
         </a>
       </div>

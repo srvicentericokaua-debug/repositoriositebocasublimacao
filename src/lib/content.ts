@@ -13,6 +13,64 @@ export const companyInfo = {
   googleReviewsUrl: "https://maps.app.goo.gl/zsXMgFB7XBcqTEz68",
 };
 
+export type GoogleReview = {
+  name: string;
+  rating: number;
+  date: string;
+  text: string;
+};
+
+export const googleReviews: GoogleReview[] = [
+  {
+    name: "Elisangela Correia (Elis)",
+    rating: 5,
+    date: "há 10 meses",
+    text: "Amei tudo ,desde o atendimento até a entrega lindos produtos,bem embalados , cuidado com o envio da encomenda. Parabéns Célia e Boca .👊☠️🖤…",
+  },
+  {
+    name: "Kailane Santiago Soares",
+    rating: 5,
+    date: "há 5 meses",
+    text: "Todos os itens que eu comprei foram maravilhosos inclusive minha maís nova aquisição",
+  },
+  {
+    name: "Lucilene Leal",
+    rating: 5,
+    date: "há 4 meses",
+    text: "Minha garrafa chegou bem embalada e dura bastante tempo gelada, ate recomendei pra minha amiga, pq ela ficou interessada :D",
+  },
+  {
+    name: "LAERCIO BRITO (BRITO SNIPER'S)",
+    rating: 5,
+    date: "há 8 meses",
+    text: "Material excelente... trabalho muito bem feito, com dedicação e carinho...",
+  },
+  {
+    name: "Daniela Lucci",
+    rating: 5,
+    date: "há 8 meses",
+    text: "Comprei duas canecas com a Célia . Fiquei muito satisfeita com o trabalho e a agilidade . Eu recomendo 👏🏻😁…",
+  },
+  {
+    name: "luanna poletto",
+    rating: 5,
+    date: "há 11 meses",
+    text: "Nossa eu encomendei e chegou rapidinho tudo perfeito super recomendo.",
+  },
+  {
+    name: "Milton Moskoski",
+    rating: 5,
+    date: "há 1 ano",
+    text: "Fiquei muito satisfeito com o atendimento e o profissionalismo da Célia. Minha esposa AMOU o presente! Com certeza foi a primeira caneca de muitas.",
+  },
+  {
+    name: "Melissa Leal",
+    rating: 5,
+    date: "há 1 ano",
+    text: "Amei minha caneca, achei perfeita, ótimo atendimento, qualidade excepcional... recomendo muito ❤️🍶…",
+  },
+];
+
 export const quemSomosText = `A Boca Sublimação nasceu em março de 2025, em Sorocaba/SP, a partir de um sonho que começou a tomar forma durante uma visita à FuturePrint, em São Paulo.
 
 Foi ali que Célia Flores, fundadora da empresa, teve o primeiro contato mais próximo com o universo da sublimação, das prensas térmicas e das inúmeras possibilidades oferecidas pelo mercado de produtos personalizados.
