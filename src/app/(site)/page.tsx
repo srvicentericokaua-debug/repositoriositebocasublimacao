@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
-import { getSiteSettings } from "@/lib/settings";
+import { getSiteSettings, splitParagraphs } from "@/lib/settings";
 import { buildWhatsAppLink, whatsappMessages } from "@/lib/whatsapp";
 import { companyInfo, destaques, comoFunciona, motivosParaContratar } from "@/lib/content";
 import { Reveal } from "@/components/site/Reveal";
@@ -191,7 +191,7 @@ export default async function HomePage() {
               Uma história que começou com um sonho e cresceu com o coração.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-[var(--color-ink-soft)]">
-              {settings.quemSomosText.split("\n\n")[0]}
+              {splitParagraphs(settings.quemSomosText)[0]}
             </p>
             <Link
               href="/quem-somos"

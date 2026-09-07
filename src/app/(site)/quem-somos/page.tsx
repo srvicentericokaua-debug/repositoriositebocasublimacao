@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { getSiteSettings } from "@/lib/settings";
+import { getSiteSettings, splitParagraphs } from "@/lib/settings";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { LogoBadge } from "@/components/site/LogoBadge";
+import { ExpandableStory } from "@/components/site/ExpandableStory";
 import { companyInfo } from "@/lib/content";
 import { AmbientVideo } from "@/components/site/AmbientVideo";
 
@@ -14,8 +15,8 @@ export const metadata: Metadata = {
 
 export default async function QuemSomosPage() {
   const settings = await getSiteSettings();
-  const paragraphs = settings.quemSomosText.split("\n\n");
-  const logoParagraphs = settings.logoStoryText.split("\n\n");
+  const paragraphs = splitParagraphs(settings.quemSomosText);
+  const logoParagraphs = splitParagraphs(settings.logoStoryText);
 
   return (
     <>
@@ -25,13 +26,9 @@ export default async function QuemSomosPage() {
       />
 
       <section className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
-        <div className="flex flex-col gap-5">
-          {paragraphs.map((p, i) => (
-            <Reveal key={i} delay={Math.min(i * 0.04, 0.3)}>
-              <p className="text-base leading-relaxed text-[var(--color-ink-soft)]">{p}</p>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal>
+          <ExpandableStory paragraphs={paragraphs} />
+        </Reveal>
       </section>
 
       <section className="bg-[var(--color-pink-light)] py-16 md:py-20">

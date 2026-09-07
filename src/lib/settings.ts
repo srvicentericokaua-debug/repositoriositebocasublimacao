@@ -2,6 +2,10 @@ import { prisma } from "@/lib/prisma";
 
 export type Valor = { title: string; text: string };
 
+export function splitParagraphs(text: string) {
+  return text.split(/\r?\n\r?\n/).filter(Boolean);
+}
+
 export async function getSiteSettings() {
   const settings = await prisma.siteSettings.findUnique({ where: { id: 1 } });
   if (!settings) {
