@@ -1,0 +1,74 @@
+import type { Metadata } from "next";
+import { getSiteSettings } from "@/lib/settings";
+import { PageHero } from "@/components/site/PageHero";
+import { Reveal } from "@/components/site/Reveal";
+import { LogoBadge } from "@/components/site/LogoBadge";
+import { companyInfo } from "@/lib/content";
+import { AmbientVideo } from "@/components/site/AmbientVideo";
+
+export const metadata: Metadata = {
+  title: "Quem Somos",
+  description:
+    "Conheça a história da Boca Sublimação, empresa familiar de Sorocaba/SP fundada por Célia Flores.",
+};
+
+export default async function QuemSomosPage() {
+  const settings = await getSiteSettings();
+  const paragraphs = settings.quemSomosText.split("\n\n");
+  const logoParagraphs = settings.logoStoryText.split("\n\n");
+
+  return (
+    <>
+      <PageHero
+        eyebrow="Nossa história"
+        title="Uma história que começou com um sonho e cresceu com o coração."
+      />
+
+      <section className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
+        <div className="flex flex-col gap-5">
+          {paragraphs.map((p, i) => (
+            <Reveal key={i} delay={Math.min(i * 0.04, 0.3)}>
+              <p className="text-base leading-relaxed text-[var(--color-ink-soft)]">{p}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-pink-light)] py-16 md:py-20">
+        <div className="mx-auto grid max-w-5xl gap-10 px-5 md:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <Reveal variant="scale-up">
+            <div className="flex justify-center">
+              <LogoBadge size={200} />
+            </div>
+          </Reveal>
+          <Reveal variant="slide-left">
+            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--color-ink)] md:text-3xl">
+              Uma identidade que também faz parte da nossa história.
+            </h2>
+            <div className="mt-5 flex flex-col gap-4">
+              {logoParagraphs.map((p, i) => (
+                <p key={i} className="text-sm leading-relaxed text-[var(--color-ink-soft)] md:text-base">
+                  {p}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-5 py-16 text-center md:px-8">
+        <Reveal variant="scale-up">
+          <AmbientVideo
+            className="relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-[2rem] shadow-[0_30px_60px_-30px_rgba(36,26,23,0.35)]"
+            src="/videos/celia-cropped.mp4"
+            poster="/images/brand/celia-fundadora.jpg"
+            alt={`${companyInfo.founder}, fundadora da ${companyInfo.name}`}
+          />
+          <p className="mt-5 text-sm font-medium text-[var(--color-ink-soft)]">
+            {companyInfo.founder} · Fundadora da {companyInfo.name}
+          </p>
+        </Reveal>
+      </section>
+    </>
+  );
+}

@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #fffaf7;
+  --color-paper: #fff4f0;
+  --color-surface: #ffffff;
+  --color-ink: #241a17;
+  --color-ink-soft: #6b5a54;
+  --color-pink-light: #fbe3e8;
+  --color-pink-mid: #f0a9bd;
+  --color-coral: #e2364f;
+  --color-coral-dark: #c02540;
+  --color-line: #f0ddd8;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-manrope);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-cream: #0a1220;
+    --color-paper: #0f1a2c;
+    --color-surface: #142238;
+    --color-ink: #ffffff;
+    --color-ink-soft: #c7d2e6;
+    --color-pink-light: #1c2c48;
+    --color-pink-mid: #ff9fc0;
+    --color-coral: #ff5470;
+    --color-coral-dark: #ff8095;
+    --color-line: #253758;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-cream: #0a1220;
+  --color-paper: #0f1a2c;
+  --color-surface: #142238;
+  --color-ink: #ffffff;
+  --color-ink-soft: #c7d2e6;
+  --color-pink-light: #1c2c48;
+  --color-pink-mid: #ff9fc0;
+  --color-coral: #ff5470;
+  --color-coral-dark: #ff8095;
+  --color-line: #253758;
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-paper: var(--color-paper);
+  --color-surface: var(--color-surface);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-pink-light: var(--color-pink-light);
+  --color-pink-mid: var(--color-pink-mid);
+  --color-coral: var(--color-coral);
+  --color-coral-dark: var(--color-coral-dark);
+  --color-line: var(--color-line);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  scroll-behavior: auto;
+}
+
+html.lenis {
+  height: auto;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+body,
+body * {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: var(--color-coral);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 3px;
+}
+
+.reveal {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-video {
+    display: none;
+  }
+  .ambient-video-fallback {
+    display: block !important;
+  }
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="marquee-left"],
+  [style*="marquee-right"] {
+    animation: none !important;
+  }
+}

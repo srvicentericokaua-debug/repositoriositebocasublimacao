@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String
+  slug     String    @unique
+  order    Int       @default(0)
+  active   Boolean   @default(true)
+  products Product[]
+}
+
+model Product {
+  id                 String         @id @default(cuid())
+  name               String
+  slug               String         @unique
+  categoryId         String
+  category           Category       @relation(fields: [categoryId], references: [id])
+  shortDescription   String
+  description        String
+  price              Float?
+  promotionalPrice   Float?
+  showPrice          Boolean        @default(false)
+  featured           Boolean        @default(false)
+  active             Boolean        @default(true)
+  order              Int            @default(0)
+  tags               String?
+  notes              String?
+  images             ProductImage[]
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String
+  alt       String
+  order     Int     @default(0)
+}
+
+model PortfolioItem {
+  id           String   @id @default(cuid())
+  title        String
+  description  String?
+  categoryTag  String
+  imageUrl     String
+  order        Int      @default(0)
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+}
+
+model SiteSettings {
+  id               Int    @id @default(1)
+  companyName      String
+  slogan           String
+  whatsapp         String
+  email            String
+  instagram        String
+  cnpj             String
+  city             String
+  quemSomosText    String
+  logoStoryText    String
+  missaoText       String
+  visaoText        String
+  valoresJson      String
+  prazosText       String
+  pagamentoJson    String
+  entregaJson      String
+}
