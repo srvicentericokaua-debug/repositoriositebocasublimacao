@@ -39,9 +39,22 @@ export function HandshakeIcon({ className }: IconProps) {
   );
 }
 
+export function ShieldIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className={className}>
+      <path
+        d="M12 3.5 19 6.3v5.4c0 4.6-3 8.1-7 9.8-4-1.7-7-5.2-7-9.8V6.3L12 3.5Z"
+        strokeLinejoin="round"
+      />
+      <path d="m9 12 2 2 4-4.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export const destaqueIcons = {
   heart: HeartIcon,
   gift: GiftIcon,
   sparkles: SparklesIcon,
   handshake: HandshakeIcon,
+  shield: ShieldIcon,
 };
