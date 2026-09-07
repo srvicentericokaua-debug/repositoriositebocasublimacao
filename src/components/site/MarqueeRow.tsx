@@ -24,13 +24,12 @@ export function MarqueeRow({
         {track.map((item, i) => (
           <div
             key={i}
-            className="flex w-72 shrink-0 flex-col gap-2 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-5 shadow-[0_10px_30px_-20px_rgba(36,26,23,0.3)]"
+            className="flex shrink-0 items-center gap-2 rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-5 py-3 whitespace-nowrap shadow-[0_10px_30px_-20px_rgba(36,26,23,0.3)]"
           >
-            {item.icon && <span className="text-xl">{item.icon}</span>}
-            <h3 className="font-[var(--font-display)] text-sm font-semibold text-[var(--color-ink)]">
+            {item.icon && <span className="text-base">{item.icon}</span>}
+            <span className="font-[var(--font-display)] text-sm font-semibold text-[var(--color-ink)]">
               {item.title}
-            </h3>
-            <p className="text-sm leading-relaxed text-[var(--color-ink-soft)]">{item.text}</p>
+            </span>
           </div>
         ))}
       </div>
