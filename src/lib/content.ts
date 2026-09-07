@@ -169,34 +169,6 @@ export const destaques = [
   },
 ];
 
-export const motivosParaContratar = [
-  {
-    icon: "heart",
-    title: "Personalização com significado",
-    text: "Transformamos ideias e momentos em produtos únicos.",
-  },
-  {
-    icon: "gift",
-    title: "Presentes especiais",
-    text: "Produtos pensados para surpreender e criar lembranças.",
-  },
-  {
-    icon: "sparkles",
-    title: "Qualidade e cuidado",
-    text: "Cada pedido recebe atenção em todos os detalhes.",
-  },
-  {
-    icon: "handshake",
-    title: "Atendimento personalizado",
-    text: "Conversamos com você para entender exatamente o que precisa.",
-  },
-  {
-    icon: "shield",
-    title: "Compromisso com o Cliente",
-    text: "Cada pedido é tratado com atenção, responsabilidade e dedicação, buscando sempre entregar o nosso melhor.",
-  },
-];
-
 export const comoFunciona = [
   { title: "Escolha o produto", text: "Veja nossas opções e pense na ideia que deseja personalizar." },
   { title: "Envie sua ideia/arte", text: "Pode ser uma foto, frase, logo ou referência." },

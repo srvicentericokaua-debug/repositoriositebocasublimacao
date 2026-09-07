@@ -3,13 +3,12 @@ import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import { getSiteSettings, splitParagraphs } from "@/lib/settings";
 import { buildWhatsAppLink, whatsappMessages } from "@/lib/whatsapp";
-import { companyInfo, destaques, comoFunciona, motivosParaContratar } from "@/lib/content";
+import { companyInfo, destaques, comoFunciona } from "@/lib/content";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { ProductCard } from "@/components/site/ProductCard";
 import { destaqueIcons } from "@/components/site/icons";
 import { AmbientVideo } from "@/components/site/AmbientVideo";
-import { StackedReasonCards } from "@/components/site/StackedReasonCards";
 import { GoogleReviewsSection } from "@/components/site/GoogleReviewsSection";
 
 export const revalidate = 0;
@@ -111,16 +110,6 @@ export default async function HomePage() {
             );
           })}
         </div>
-      </section>
-
-      {/* POR QUE ESCOLHER */}
-      <section className="overflow-hidden border-y border-[var(--color-line)] bg-[var(--color-pink-light)] py-16 md:py-20">
-        <Reveal>
-          <h2 className="mb-10 text-center font-[var(--font-display)] text-2xl font-semibold text-[var(--color-ink)] md:text-3xl">
-            Por que escolher a Boca Sublimação
-          </h2>
-        </Reveal>
-        <StackedReasonCards items={motivosParaContratar} />
       </section>
 
       {/* PRODUTOS EM DESTAQUE */}
