@@ -64,7 +64,7 @@ export default async function HomePage() {
               Sorocaba · SP
             </span>
             <h1 className="font-[var(--font-display)] text-4xl leading-[1.08] font-semibold text-[var(--color-ink)] sm:text-5xl lg:text-[3.4rem]">
-              Seja bem-vindos à Boca Sublimação!
+              Sejam bem-vindos à Boca Sublimação!
             </h1>
             <p className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[var(--color-coral-dark)] italic sm:text-2xl">
               Do coração para a caneca!
