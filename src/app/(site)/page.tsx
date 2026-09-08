@@ -191,15 +191,12 @@ export default async function HomePage() {
       <section className="bg-[var(--color-pink-light)] py-16 md:py-24">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <Reveal variant="slide-right">
-            <div className="relative mx-auto aspect-[3/4] max-w-sm overflow-hidden rounded-[2rem] shadow-[0_30px_60px_-30px_rgba(36,26,23,0.35)]">
-              <Image
-                src="/images/brand/celia-com-logo.jpg"
-                alt="Célia Flores, fundadora da Boca Sublimação, abraçando a logo da marca"
-                fill
-                sizes="(min-width: 1024px) 384px, 80vw"
-                className="object-cover"
-              />
-            </div>
+            <AmbientVideo
+              className="relative mx-auto aspect-[3/4] max-w-sm overflow-hidden rounded-[2rem] shadow-[0_30px_60px_-30px_rgba(36,26,23,0.35)]"
+              src="/videos/celia-cropped.mp4"
+              poster="/images/brand/celia-fundadora.jpg"
+              alt="Célia Flores, fundadora da Boca Sublimação"
+            />
           </Reveal>
           <Reveal variant="slide-left">
             <span className="mb-3 inline-block text-xs font-semibold tracking-[0.2em] text-[var(--color-coral-dark)] uppercase">
