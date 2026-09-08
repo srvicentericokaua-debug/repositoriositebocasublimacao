@@ -3,7 +3,7 @@ import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import { getSiteSettings, splitParagraphs } from "@/lib/settings";
 import { buildWhatsAppLink, whatsappMessages } from "@/lib/whatsapp";
-import { companyInfo, destaques, comoFunciona } from "@/lib/content";
+import { destaques, comoFunciona } from "@/lib/content";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { ProductCard } from "@/components/site/ProductCard";
@@ -64,7 +64,7 @@ export default async function HomePage() {
               Sorocaba · SP
             </span>
             <h1 className="font-[var(--font-display)] text-4xl leading-[1.08] font-semibold text-[var(--color-ink)] sm:text-5xl lg:text-[3.4rem]">
-              {companyInfo.slogan}
+              Seja bem-vindos à Boca Sublimação! Do coração para a caneca!
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--color-ink-soft)]">
               Transformamos ideias, sentimentos, marcas e momentos especiais em produtos

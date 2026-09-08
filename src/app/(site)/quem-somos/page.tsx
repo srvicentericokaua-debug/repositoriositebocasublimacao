@@ -13,6 +13,8 @@ export const metadata: Metadata = {
     "Conheça a história da Boca Sublimação, empresa familiar de Sorocaba/SP fundada por Célia Flores.",
 };
 
+export const revalidate = 0;
+
 export default async function QuemSomosPage() {
   const settings = await getSiteSettings();
   const paragraphs = splitParagraphs(settings.quemSomosText);

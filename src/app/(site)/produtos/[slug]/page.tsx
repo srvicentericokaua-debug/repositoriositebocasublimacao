@@ -5,6 +5,8 @@ import { ProductGallery } from "@/components/site/ProductGallery";
 import { Reveal } from "@/components/site/Reveal";
 import { buildWhatsAppLink, whatsappMessages } from "@/lib/whatsapp";
 
+export const revalidate = 0;
+
 async function getProduct(slug: string) {
   return prisma.product.findFirst({
     where: { slug, active: true },

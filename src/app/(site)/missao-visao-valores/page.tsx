@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "Os princípios que guiam a Boca Sublimação em cada produto personalizado.",
 };
 
+export const revalidate = 0;
+
 export default async function MissaoVisaoValoresPage() {
   const settings = await getSiteSettings();
 

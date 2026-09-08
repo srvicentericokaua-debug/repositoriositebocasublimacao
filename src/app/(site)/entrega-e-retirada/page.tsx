@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Informações sobre retirada em Sorocaba/SP e envio para outras cidades.",
 };
 
+export const revalidate = 0;
+
 export default async function EntregaPage() {
   const settings = await getSiteSettings();
 

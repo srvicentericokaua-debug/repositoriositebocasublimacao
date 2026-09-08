@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Saiba o prazo médio de produção dos produtos personalizados da Boca Sublimação.",
 };
 
+export const revalidate = 0;
+
 export default async function PrazosPage() {
   const settings = await getSiteSettings();
 

@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Confira as formas de pagamento aceitas pela Boca Sublimação.",
 };
 
+export const revalidate = 0;
+
 export default async function PagamentoPage() {
   const settings = await getSiteSettings();
 

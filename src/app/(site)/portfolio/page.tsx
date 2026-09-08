@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "Veja trabalhos reais feitos pela Boca Sublimação: canecas, camisetas, squeezes e mais.",
 };
 
+export const revalidate = 0;
+
 export default async function PortfolioPage() {
   const items = await prisma.portfolioItem.findMany({
     where: { active: true },
