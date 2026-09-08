@@ -135,16 +135,12 @@ body * {
 }
 
 .card-glow {
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card-glow:hover {
   transform: translateY(-6px);
-  border-color: var(--color-coral);
-  box-shadow:
-    0 0 0 1px var(--color-coral),
-    0 0 30px 2px var(--color-coral),
-    0 24px 45px -22px rgba(36, 26, 23, 0.45);
+  box-shadow: 0 24px 45px -22px rgba(36, 26, 23, 0.45);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -161,9 +157,7 @@ body * {
 
 .btn-cta-3d:hover {
   transform: translateY(-2px);
-  box-shadow:
-    0 7px 0 var(--color-coral-dark),
-    0 0 18px 2px var(--color-coral);
+  box-shadow: 0 7px 0 var(--color-coral-dark);
 }
 
 .btn-cta-3d:active {
@@ -179,9 +173,7 @@ body * {
 
 .btn-cta-3d-inverse:hover {
   transform: translateY(-2px);
-  box-shadow:
-    0 7px 0 rgba(0, 0, 0, 0.15),
-    0 0 18px 2px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.15);
 }
 
 .btn-cta-3d-inverse:active {
