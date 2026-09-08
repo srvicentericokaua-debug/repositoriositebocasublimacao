@@ -3,7 +3,7 @@ import { comoFunciona } from "@/lib/content";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { buildWhatsAppLink, whatsappMessages } from "@/lib/whatsapp";
-import { AmbientVideo } from "@/components/site/AmbientVideo";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Como Funciona",
@@ -21,12 +21,15 @@ export default function ComoFuncionaPage() {
 
       <section className="mx-auto max-w-5xl px-5 py-16 md:px-8 md:py-20">
         <Reveal variant="scale-up">
-          <AmbientVideo
-            className="relative mx-auto mb-14 aspect-[4/3] w-full max-w-2xl overflow-hidden rounded-[2rem] shadow-[0_30px_60px_-30px_rgba(36,26,23,0.35)]"
-            src="/videos/atelie-cropped.mp4"
-            poster="/images/brand/atelie-canecas.png"
-            alt="Processo de produção com prensa térmica e impressão para sublimação"
-          />
+          <div className="relative mx-auto mb-14 aspect-[4/3] w-full max-w-2xl overflow-hidden rounded-[2rem] shadow-[0_30px_60px_-30px_rgba(36,26,23,0.35)]">
+            <Image
+              src="/images/brand/celia-com-logo.jpg"
+              alt="Célia Flores, fundadora da Boca Sublimação, abraçando a logo da marca"
+              fill
+              sizes="(min-width: 1024px) 672px, 90vw"
+              className="object-cover"
+            />
+          </div>
         </Reveal>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {comoFunciona.map((step, i) => (
