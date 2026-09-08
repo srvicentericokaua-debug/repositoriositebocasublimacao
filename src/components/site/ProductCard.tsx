@@ -21,7 +21,7 @@ export function ProductCard({ product }: { product: ProductCardData }) {
   const cover = product.images[0];
 
   return (
-    <div className="card-glow group flex flex-col overflow-hidden rounded-3xl border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_10px_30px_-18px_rgba(36,26,23,0.25)]">
+    <div className="group flex flex-col overflow-hidden rounded-3xl border border-[var(--color-line)] bg-[var(--color-surface)] shadow-[0_10px_30px_-18px_rgba(36,26,23,0.25)] transition-shadow hover:shadow-[0_16px_40px_-16px_rgba(36,26,23,0.3)]">
       <Link href={`/produtos/${product.slug}`} className="relative block aspect-square overflow-hidden bg-[var(--color-pink-light)]">
         {cover ? (
           <Image

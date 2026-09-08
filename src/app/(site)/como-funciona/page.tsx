@@ -51,7 +51,7 @@ export default function ComoFuncionaPage() {
               href={buildWhatsAppLink(whatsappMessages.home)}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-cta-3d mt-5 inline-flex items-center justify-center rounded-full bg-[var(--color-coral)] px-6 py-3 text-sm font-semibold text-white hover:bg-[var(--color-coral-dark)]"
+              className="mt-5 inline-flex items-center justify-center rounded-full bg-[var(--color-coral)] px-6 py-3 text-sm font-semibold text-white hover:bg-[var(--color-coral-dark)]"
             >
               Falar no WhatsApp
             </a>
