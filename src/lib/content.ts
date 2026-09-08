@@ -71,31 +71,15 @@ export const googleReviews: GoogleReview[] = [
   },
 ];
 
-export const quemSomosText = `A Boca Sublimação nasceu em março de 2025, em Sorocaba/SP, a partir de um sonho que começou a tomar forma durante uma visita à FuturePrint, em São Paulo.
+export const quemSomosText = `A Boca Sublimação nasceu em março de 2025, em Sorocaba/SP, a partir do interesse de sua fundadora, Célia Flores, pelo universo da personalização, despertado durante uma visita à FuturePrint 2024, em São Paulo.
 
-Foi ali que Célia Flores, fundadora da empresa, teve o primeiro contato mais próximo com o universo da sublimação, das prensas térmicas e das inúmeras possibilidades oferecidas pelo mercado de produtos personalizados.
+O negócio começou de forma simples, com uma prensa, uma impressora, uma caixa de canecas, papel sublimático e fita térmica. Entre desafios, aprendizados e muita dedicação, a produção evoluiu e o catálogo cresceu, passando das canecas para garrafinhas, camisetas, toalhinhas e outros personalizados.
 
-A curiosidade despertada naquela feira logo se transformou em busca por conhecimento. O curso Arteira da Sublimação, da Neila, trouxe a base necessária para que a ideia começasse a sair do papel.
+O nome Boca Sublimação também carrega um significado especial: "Boca" é o apelido do esposo da fundadora, representando uma história de companheirismo, família e afeto.
 
-O início foi simples e conquistado com muito esforço: uma prensa de canecas, uma caixa de canecas, uma impressora Epson nova, tinta sublimática, papel Jojô, caixinhas e sacolinhas para as primeiras entregas.
+Hoje, com parceiros e fornecedores comprometidos com qualidade, confiança e responsabilidade, a Boca Sublimação segue crescendo e transformando ideias em produtos personalizados para presentear, celebrar, homenagear e eternizar momentos especiais.
 
-Era uma estrutura pequena, mas acompanhada de um grande desejo de aprender e fazer acontecer.
-
-Como todo começo, também vieram os erros: estampas falhadas, resultados diferentes do esperado e até artes de ponta-cabeça.
-
-Houve momentos de desânimo, mas a persistência falou mais alto. Cada erro trouxe aprendizado e cada acerto abriu espaço para um novo passo.
-
-Primeiro vieram as canecas, depois as garrafinhas. Em seguida, chegaram as camisetas, toalhinhas e diversas outras possibilidades de personalização.
-
-O catálogo foi crescendo junto com a experiência e, hoje, canecas e camisetas estão entre os principais carros-chefe da Boca Sublimação.
-
-Ao longo dessa caminhada, a busca pela qualidade sempre esteve presente. Com comprometimento, foram construídas parcerias com fornecedores e profissionais que compartilham dos mesmos princípios de qualidade, confiança e responsabilidade, muitos deles presentes em nossa trajetória até hoje.
-
-O próprio nome Boca Sublimação carrega um significado afetivo e familiar. "Boca" é o nome de colete do esposo da fundadora no motoclube onde o casal se conheceu. A escolha foi uma homenagem ao companheirismo, ao cuidado e, principalmente, ao carinho dedicado à família e aos filhos.
-
-Assim, de uma prensa, uma caixa de canecas e muita vontade de fazer dar certo, nasceu uma empresa familiar que continua crescendo sem esquecer suas raízes.
-
-Hoje, a Boca Sublimação transforma ideias em produtos personalizados para presentear, homenagear, celebrar, divulgar marcas e eternizar momentos especiais. Mais do que personalizar produtos, buscamos colocar sentimento em cada trabalho, transformando objetos em lembranças cheias de significado.`;
+Boca Sublimação — transformando ideias em lembranças cheias de significado.`;
 
 export const logoStoryText = `Com o auxílio do ChatGPT, nasceu a criação da logo e do slogan que acompanharam os primeiros passos da marca: "Boca Sublimação — Do coração para a caneca".
 
