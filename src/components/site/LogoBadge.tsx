@@ -8,7 +8,7 @@ export function LogoBadge({ size = 56 }: { size?: number }) {
   return (
     <span className="inline-flex shrink-0 items-center justify-center" style={{ width, height: size }}>
       <Image
-        src="/images/logo/logo-boca.png"
+        src="/images/logo/logo-boca-new.png"
         alt="Boca Sublimação"
         width={width}
         height={size}

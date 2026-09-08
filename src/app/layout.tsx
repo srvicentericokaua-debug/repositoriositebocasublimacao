@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/images/logo/logo-boca.png",
+    icon: "/images/logo/logo-boca-new.png",
   },
 };
 
