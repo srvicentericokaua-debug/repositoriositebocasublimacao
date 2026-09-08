@@ -1,10 +1,27 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { saveUploadedImage } from "@/lib/upload";
+import { saveUploadedImage, UploadValidationError } from "@/lib/upload";
 import { slugify } from "@/lib/validations";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+
+async function saveImages(files: File[], productId: string, alt: string, startOrder: number) {
+  let order = startOrder;
+  for (const file of files) {
+    try {
+      const url = await saveUploadedImage(file, "products");
+      if (url) {
+        await prisma.productImage.create({ data: { productId, url, alt, order: order++ } });
+      }
+    } catch (err) {
+      const message =
+        err instanceof UploadValidationError ? err.message : "Não foi possível enviar uma das fotos.";
+      return message;
+    }
+  }
+  return null;
+}
 
 function refresh() {
   revalidatePath("/admin/produtos");
@@ -54,17 +71,14 @@ export async function createProduct(formData: FormData) {
     data: { ...data, slug },
   });
 
-  let order = 0;
-  for (const file of files) {
-    const url = await saveUploadedImage(file, "products");
-    if (url) {
-      await prisma.productImage.create({
-        data: { productId: product.id, url, alt: data.name, order: order++ },
-      });
-    }
-  }
+  const uploadError = await saveImages(files, product.id, data.name, 0);
 
   refresh();
+  if (uploadError) {
+    redirect(
+      `/admin/produtos/${product.id}/editar?error=${encodeURIComponent(`Produto criado, mas ${uploadError}`)}`
+    );
+  }
   redirect("/admin/produtos?success=Produto+criado+com+sucesso");
 }
 
@@ -84,17 +98,12 @@ export async function updateProduct(id: string, formData: FormData) {
   await prisma.product.update({ where: { id }, data: { ...data, slug } });
 
   const existingCount = await prisma.productImage.count({ where: { productId: id } });
-  let order = existingCount;
-  for (const file of files) {
-    const url = await saveUploadedImage(file, "products");
-    if (url) {
-      await prisma.productImage.create({
-        data: { productId: id, url, alt: data.name, order: order++ },
-      });
-    }
-  }
+  const uploadError = await saveImages(files, id, data.name, existingCount);
 
   refresh();
+  if (uploadError) {
+    redirect(`/admin/produtos/${id}/editar?error=${encodeURIComponent(uploadError)}`);
+  }
   redirect("/admin/produtos?success=Produto+atualizado");
 }
 

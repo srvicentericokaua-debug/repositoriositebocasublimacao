@@ -1,3 +1,6 @@
+import { ImageFileInput } from "./ImageFileInput";
+import { SubmitButton } from "./SubmitButton";
+
 type Category = { id: string; name: string };
 
 export type ProductDefaults = {
@@ -95,12 +98,13 @@ export function ProductForm({
         <label className="mb-1 block text-xs font-semibold text-[var(--color-ink)]">
           {defaults ? "Adicionar novas fotos" : "Fotos do produto"}
         </label>
-        <input name="images" type="file" accept="image/*" multiple className="w-full text-sm" />
+        <ImageFileInput name="images" multiple />
+        <p className="mt-2 text-xs text-[var(--color-ink-soft)]">JPG, PNG ou WEBP · até 8MB por foto</p>
       </div>
 
-      <button type="submit" className="self-start rounded-full bg-[var(--color-coral)] px-6 py-3 text-sm font-semibold text-white hover:bg-[var(--color-coral-dark)]">
+      <SubmitButton className="self-start rounded-full bg-[var(--color-coral)] px-6 py-3 text-sm font-semibold text-white hover:bg-[var(--color-coral-dark)]">
         {submitLabel}
-      </button>
+      </SubmitButton>
     </form>
   );
 }

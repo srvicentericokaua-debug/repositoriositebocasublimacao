@@ -1,7 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { saveUploadedImage } from "@/lib/upload";
+import { saveUploadedImage, UploadValidationError } from "@/lib/upload";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -22,7 +22,14 @@ export async function createPortfolioItem(formData: FormData) {
     redirect("/admin/portfolio?error=Titulo+e+imagem+sao+obrigatorios");
   }
 
-  const imageUrl = await saveUploadedImage(file, "portfolio");
+  let imageUrl: string | null;
+  try {
+    imageUrl = await saveUploadedImage(file, "portfolio");
+  } catch (err) {
+    const message =
+      err instanceof UploadValidationError ? err.message : "Não foi possível enviar a imagem.";
+    redirect(`/admin/portfolio?error=${encodeURIComponent(message)}`);
+  }
   if (!imageUrl) {
     redirect("/admin/portfolio?error=Falha+ao+enviar+imagem");
   }
