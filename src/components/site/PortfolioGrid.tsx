@@ -43,7 +43,7 @@ export function PortfolioGrid({ items }: { items: PortfolioItemData[] }) {
             <button
               key={item.id}
               onClick={() => setLightbox(item)}
-              className="group relative block w-full overflow-hidden rounded-2xl bg-[var(--color-pink-light)] text-left"
+              className="card-glow group relative block w-full overflow-hidden rounded-2xl bg-[var(--color-pink-light)] text-left"
             >
               <Image
                 src={item.imageUrl}

@@ -36,7 +36,7 @@ export default async function EntregaPage() {
               href={buildWhatsAppLink(whatsappMessages.entrega)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--color-coral)] px-7 py-3.5 text-sm font-semibold text-white hover:bg-[var(--color-coral-dark)]"
+              className="btn-cta-3d inline-flex items-center justify-center rounded-full bg-[var(--color-coral)] px-7 py-3.5 text-sm font-semibold text-white hover:bg-[var(--color-coral-dark)]"
             >
               Consultar entrega
             </a>

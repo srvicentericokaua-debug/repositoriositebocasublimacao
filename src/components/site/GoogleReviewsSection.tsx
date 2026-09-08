@@ -31,7 +31,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
       href={companyInfo.googleReviewsUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex w-[78vw] shrink-0 flex-col gap-3 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-5 shadow-[0_10px_30px_-22px_rgba(36,26,23,0.35)] transition-shadow hover:shadow-[0_14px_34px_-18px_rgba(36,26,23,0.4)] sm:w-72 md:w-80"
+      className="card-glow flex w-[78vw] shrink-0 flex-col gap-3 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-5 shadow-[0_10px_30px_-22px_rgba(36,26,23,0.35)] sm:w-72 md:w-80"
     >
       <div className="flex items-center justify-between">
         <Stars rating={review.rating} />

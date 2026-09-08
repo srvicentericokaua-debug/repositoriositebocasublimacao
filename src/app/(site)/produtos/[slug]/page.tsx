@@ -69,7 +69,7 @@ export default async function ProductPage({
             href={buildWhatsAppLink(whatsappMessages.produto(product.name))}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[var(--color-coral)] px-7 py-3.5 text-sm font-semibold text-white hover:bg-[var(--color-coral-dark)] sm:w-auto"
+            className="btn-cta-3d mt-6 inline-flex w-full items-center justify-center rounded-full bg-[var(--color-coral)] px-7 py-3.5 text-sm font-semibold text-white hover:bg-[var(--color-coral-dark)] sm:w-auto"
           >
             Solicitar orçamento
           </a>

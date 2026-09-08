@@ -44,7 +44,7 @@ export function Header() {
             href={buildWhatsAppLink(whatsappMessages.home)}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden items-center justify-center rounded-full bg-[var(--color-coral)] px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-white shadow-sm transition-colors hover:bg-[var(--color-coral-dark)] sm:inline-flex"
+            className="btn-cta-3d hidden items-center justify-center rounded-full bg-[var(--color-coral)] px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-white transition-colors hover:bg-[var(--color-coral-dark)] sm:inline-flex"
           >
             Fale conosco
           </a>
@@ -85,7 +85,7 @@ export function Header() {
             href={buildWhatsAppLink(whatsappMessages.home)}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center justify-center rounded-full bg-[var(--color-coral)] px-5 py-3 text-sm font-semibold text-white"
+            className="btn-cta-3d mt-2 inline-flex items-center justify-center rounded-full bg-[var(--color-coral)] px-5 py-3 text-sm font-semibold text-white"
           >
             Fale conosco no WhatsApp
           </a>

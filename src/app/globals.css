@@ -133,3 +133,110 @@ body * {
     mask-image: linear-gradient(to right, transparent 0, black 4%, black 96%, transparent 100%);
   }
 }
+
+.card-glow {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.card-glow:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-coral);
+  box-shadow:
+    0 0 0 1px var(--color-coral),
+    0 0 30px 2px var(--color-coral),
+    0 24px 45px -22px rgba(36, 26, 23, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-glow:hover {
+    transform: none;
+  }
+}
+
+.btn-cta-3d {
+  position: relative;
+  box-shadow:
+    0 5px 0 var(--color-coral-dark),
+    0 8px 18px -6px var(--color-coral);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  animation: btn-cta-pulse 2.6s ease-in-out infinite;
+}
+
+.btn-cta-3d:hover {
+  transform: translateY(-3px);
+  animation-play-state: paused;
+  box-shadow:
+    0 8px 0 var(--color-coral-dark),
+    0 0 34px 6px var(--color-coral);
+}
+
+.btn-cta-3d:active {
+  transform: translateY(2px);
+  animation-play-state: paused;
+  box-shadow:
+    0 2px 0 var(--color-coral-dark),
+    0 4px 12px -4px var(--color-coral);
+}
+
+@keyframes btn-cta-pulse {
+  0%, 100% {
+    box-shadow:
+      0 5px 0 var(--color-coral-dark),
+      0 8px 18px -6px var(--color-coral);
+  }
+  50% {
+    box-shadow:
+      0 5px 0 var(--color-coral-dark),
+      0 8px 30px 4px var(--color-coral);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-cta-3d {
+    animation: none;
+  }
+}
+
+.btn-cta-3d-inverse {
+  position: relative;
+  box-shadow:
+    0 5px 0 rgba(0, 0, 0, 0.15),
+    0 8px 18px -6px rgba(255, 255, 255, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  animation: btn-cta-pulse-inverse 2.6s ease-in-out infinite;
+}
+
+.btn-cta-3d-inverse:hover {
+  transform: translateY(-3px) scale(1.05);
+  animation-play-state: paused;
+  box-shadow:
+    0 8px 0 rgba(0, 0, 0, 0.15),
+    0 0 34px 8px rgba(255, 255, 255, 0.85);
+}
+
+.btn-cta-3d-inverse:active {
+  transform: translateY(2px);
+  animation-play-state: paused;
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.15),
+    0 4px 12px -4px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes btn-cta-pulse-inverse {
+  0%, 100% {
+    box-shadow:
+      0 5px 0 rgba(0, 0, 0, 0.15),
+      0 8px 18px -6px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow:
+      0 5px 0 rgba(0, 0, 0, 0.15),
+      0 8px 32px 4px rgba(255, 255, 255, 0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-cta-3d-inverse {
+    animation: none;
+  }
+}

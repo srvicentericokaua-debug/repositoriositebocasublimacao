@@ -78,7 +78,7 @@ export default async function HomePage() {
                 href={buildWhatsAppLink(whatsappMessages.home)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-[var(--color-coral)] px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[var(--color-coral-dark)]"
+                className="btn-cta-3d inline-flex items-center justify-center rounded-full bg-[var(--color-coral)] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-coral-dark)]"
               >
                 Quero fazer meu pedido
               </a>
@@ -100,7 +100,7 @@ export default async function HomePage() {
             const Icon = destaqueIcons[item.icon as keyof typeof destaqueIcons];
             return (
               <Reveal key={item.title} variant={i % 2 === 0 ? "fade-up" : "slide-right"} delay={i * 0.08}>
-                <div className="flex h-full flex-col gap-4 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6">
+                <div className="card-glow flex h-full flex-col gap-4 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)] p-6">
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--color-pink-light)] text-[var(--color-coral-dark)]">
                     <Icon className="h-5 w-5" />
                   </span>
@@ -145,7 +145,7 @@ export default async function HomePage() {
                   href={buildWhatsAppLink(whatsappMessages.home)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center justify-center rounded-full bg-[var(--color-coral)] px-6 py-3 text-sm font-semibold text-white hover:bg-[var(--color-coral-dark)]"
+                  className="btn-cta-3d mt-5 inline-flex items-center justify-center rounded-full bg-[var(--color-coral)] px-6 py-3 text-sm font-semibold text-white hover:bg-[var(--color-coral-dark)]"
                 >
                   Falar no WhatsApp
                 </a>
@@ -294,7 +294,7 @@ export default async function HomePage() {
               href={buildWhatsAppLink(whatsappMessages.home)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-[var(--color-surface)] px-8 py-3.5 text-sm font-semibold text-[var(--color-coral-dark)] shadow-sm transition-transform hover:scale-105"
+              className="btn-cta-3d-inverse mt-8 inline-flex items-center justify-center rounded-full bg-[var(--color-surface)] px-8 py-3.5 text-sm font-semibold text-[var(--color-coral-dark)]"
             >
               Falar pelo WhatsApp
             </a>
