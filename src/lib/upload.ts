@@ -1,16 +1,17 @@
-import { writeFile, mkdir } from "fs/promises";
-import path from "path";
+import { put } from "@vercel/blob";
 import crypto from "crypto";
+import path from "path";
 
 export async function saveUploadedImage(file: File | null, folder: "products" | "portfolio") {
   if (!file || file.size === 0) return null;
 
-  const bytes = Buffer.from(await file.arrayBuffer());
   const ext = path.extname(file.name) || ".jpg";
-  const filename = `${crypto.randomUUID()}${ext}`;
-  const dir = path.join(process.cwd(), "public", "images", folder);
-  await mkdir(dir, { recursive: true });
-  await writeFile(path.join(dir, filename), bytes);
+  const filename = `${folder}/${crypto.randomUUID()}${ext}`;
 
-  return `/images/${folder}/${filename}`;
+  const blob = await put(filename, file, {
+    access: "public",
+    addRandomSuffix: false,
+  });
+
+  return blob.url;
 }
