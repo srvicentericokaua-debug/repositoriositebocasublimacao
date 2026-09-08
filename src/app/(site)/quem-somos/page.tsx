@@ -5,7 +5,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { LogoBadge } from "@/components/site/LogoBadge";
 import { ExpandableStory } from "@/components/site/ExpandableStory";
 import { companyInfo } from "@/lib/content";
-import Image from "next/image";
+import { AmbientVideo } from "@/components/site/AmbientVideo";
 
 export const metadata: Metadata = {
   title: "Quem Somos",
@@ -57,15 +57,12 @@ export default async function QuemSomosPage() {
 
       <section className="mx-auto max-w-3xl px-5 py-16 text-center md:px-8">
         <Reveal variant="scale-up">
-          <div className="relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-[2rem] shadow-[0_30px_60px_-30px_rgba(36,26,23,0.35)]">
-            <Image
-              src="/images/brand/celia-com-logo.jpg"
-              alt={`${companyInfo.founder}, fundadora da ${companyInfo.name}, abraçando a logo da marca`}
-              fill
-              sizes="(min-width: 768px) 320px, 80vw"
-              className="object-cover"
-            />
-          </div>
+          <AmbientVideo
+            className="relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-[2rem] shadow-[0_30px_60px_-30px_rgba(36,26,23,0.35)]"
+            src="/videos/celia-cropped.mp4"
+            poster="/images/brand/celia-fundadora.jpg"
+            alt={`${companyInfo.founder}, fundadora da ${companyInfo.name}`}
+          />
           <p className="mt-5 text-sm font-medium text-[var(--color-ink-soft)]">
             {companyInfo.founder} · Fundadora da {companyInfo.name}
           </p>
