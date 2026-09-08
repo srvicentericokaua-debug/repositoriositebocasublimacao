@@ -10,6 +10,7 @@ import { ProductCard } from "@/components/site/ProductCard";
 import { destaqueIcons } from "@/components/site/icons";
 import { AmbientVideo } from "@/components/site/AmbientVideo";
 import { GoogleReviewsSection } from "@/components/site/GoogleReviewsSection";
+import { SocialLinks } from "@/components/site/SocialLinks";
 
 export const revalidate = 0;
 
@@ -89,6 +90,12 @@ export default async function HomePage() {
                 Ver produtos
               </Link>
             </div>
+            <div className="mt-7">
+              <p className="mb-2 text-xs font-semibold tracking-[0.1em] text-[var(--color-ink-soft)] uppercase">
+                Conheça a Boca Sublimação nas redes
+              </p>
+              <SocialLinks variant="ghost" />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -161,6 +168,22 @@ export default async function HomePage() {
               Ver catálogo completo
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* REDES SOCIAIS */}
+      <section className="border-t border-[var(--color-line)] bg-[var(--color-pink-light)] py-14 md:py-16">
+        <div className="mx-auto max-w-3xl px-5 text-center md:px-8">
+          <Reveal variant="scale-up">
+            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--color-ink)] md:text-3xl">
+              Quer ver mais novidades?
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-[var(--color-ink-soft)]">
+              Nosso Instagram e TikTok estão sempre cheios de novidades, produtos personalizados,
+              bastidores e lançamentos.
+            </p>
+            <SocialLinks variant="buttons" className="mt-7 items-center justify-center" />
+          </Reveal>
         </div>
       </section>
 

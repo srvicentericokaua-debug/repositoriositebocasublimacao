@@ -1,5 +1,6 @@
 import { companyInfo, googleReviews, type GoogleReview } from "@/lib/content";
 import { Reveal } from "./Reveal";
+import { SocialLinks } from "./SocialLinks";
 
 function GoogleG({ className }: { className?: string }) {
   return (
@@ -113,6 +114,11 @@ export function GoogleReviewsSection() {
           <GoogleG className="h-4 w-4" />
           Ver todas as avaliações no Google
         </a>
+
+        <p className="mt-8 text-sm text-[var(--color-ink-soft)]">
+          Gostou dos nossos produtos? Veja mais trabalhos da Boca Sublimação nas redes.
+        </p>
+        <SocialLinks variant="ghost" className="mt-3 justify-center" />
       </div>
     </section>
   );

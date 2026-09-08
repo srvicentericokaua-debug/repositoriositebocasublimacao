@@ -8,7 +8,9 @@ export const companyInfo = {
   whatsappDisplay: "(11) 96207-1750",
   whatsappNumber: "5511962071750",
   instagram: "@bocasublimacao",
-  instagramUrl: "https://instagram.com/bocasublimacao",
+  instagramUrl: "https://www.instagram.com/bocasublimacao/",
+  tiktok: "@bocasublimacao2024",
+  tiktokUrl: "https://www.tiktok.com/@bocasublimacao2024",
   whatsappCatalogUrl: "https://wa.me/c/5511962071750",
   googleReviewsUrl: "https://maps.app.goo.gl/zsXMgFB7XBcqTEz68",
 };

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoBadge } from "./LogoBadge";
+import { SocialLinks } from "./SocialLinks";
 import { companyInfo } from "@/lib/content";
 
 const footerLinks = [
@@ -25,6 +26,12 @@ export function Footer() {
           <p className="max-w-xs text-sm leading-relaxed text-[var(--color-ink-soft)]">
             {companyInfo.slogan}
           </p>
+          <div>
+            <h3 className="mb-3 text-xs font-semibold tracking-[0.15em] text-[var(--color-ink-soft)] uppercase">
+              Siga a Boca Sublimação
+            </h3>
+            <SocialLinks variant="icons" />
+          </div>
         </div>
 
         <div>
